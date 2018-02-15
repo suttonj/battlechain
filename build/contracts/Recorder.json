@@ -1,0 +1,349 @@
+{
+  "contractName": "Recorder",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_message",
+          "type": "string"
+        }
+      ],
+      "name": "Record",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ],
+      "name": "record",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6101a28061001e6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063e51ace1614610046575b600080fd5b341561005157600080fd5b6100a1600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506100a3565b005b7fac0fdae5d3299ac82cf049834f149484c5cafb1584ffd1e2432597e4581b16a73382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561013857808201518184015260208101905061011d565b50505050905090810190601f1680156101655780820380516001836020036101000a031916815260200191505b50935050505060405180910390a1505600a165627a7a7230582070a1c2b1ee085fc0bc159a34723eecd6faa9da537155b7954291c85f9a6b86600029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063e51ace1614610046575b600080fd5b341561005157600080fd5b6100a1600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506100a3565b005b7fac0fdae5d3299ac82cf049834f149484c5cafb1584ffd1e2432597e4581b16a73382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561013857808201518184015260208101905061011d565b50505050905090810190601f1680156101655780820380516001836020036101000a031916815260200191505b50935050505060405180910390a1505600a165627a7a7230582070a1c2b1ee085fc0bc159a34723eecd6faa9da537155b7954291c85f9a6b86600029",
+  "sourceMap": "100:299:1:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "100:299:1:-;;;;;;;;;;;;;;;;;;;;;;;;324:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;363:27;370:10;382:7;363:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;324:72:1;:::o",
+  "source": "pragma solidity 0.4.19;\r\n\r\n/**\r\n * @title Recorder — record a message into the blockchain\r\n */\r\n\r\ncontract Recorder {\r\n  event Record(\r\n    address _from,\r\n    string _message\r\n  );\r\n  \r\n  /**\r\n   * @notice Sends the contract a message\r\n   * to record into the blockchain\r\n   * @param message  message to record\r\n   */\r\n  function record(string message) {\r\n    Record(msg.sender, message);\r\n  }\r\n}",
+  "sourcePath": "C:\\Users\\Jeremy\\dev\\cryptoduel\\contracts\\Recorder.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/C/Users/Jeremy/dev/cryptoduel/contracts/Recorder.sol",
+      "exportedSymbols": {
+        "Recorder": [
+          189
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.4",
+            ".19"
+          ]
+        },
+        "id": 170,
+        "name": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title Recorder — record a message into the blockchain\r",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            189
+          ],
+          "name": "Recorder",
+          "scope": 190
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "Record"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_from",
+                      "scope": 176,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 171,
+                        "name": "ElementaryTypeName",
+                        "src": "142:7:1"
+                      }
+                    ],
+                    "id": 172,
+                    "name": "VariableDeclaration",
+                    "src": "142:13:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_message",
+                      "scope": 176,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 173,
+                        "name": "ElementaryTypeName",
+                        "src": "162:6:1"
+                      }
+                    ],
+                    "id": 174,
+                    "name": "VariableDeclaration",
+                    "src": "162:15:1"
+                  }
+                ],
+                "id": 175,
+                "name": "ParameterList",
+                "src": "135:47:1"
+              }
+            ],
+            "id": 176,
+            "name": "EventDefinition",
+            "src": "123:60:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "record",
+              "payable": false,
+              "scope": 189,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "message",
+                      "scope": 188,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 177,
+                        "name": "ElementaryTypeName",
+                        "src": "340:6:1"
+                      }
+                    ],
+                    "id": 178,
+                    "name": "VariableDeclaration",
+                    "src": "340:14:1"
+                  }
+                ],
+                "id": 179,
+                "name": "ParameterList",
+                "src": "339:16:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 180,
+                "name": "ParameterList",
+                "src": "356:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 176,
+                              "type": "function (address,string memory)",
+                              "value": "Record"
+                            },
+                            "id": 181,
+                            "name": "Identifier",
+                            "src": "363:6:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 256,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 182,
+                                "name": "Identifier",
+                                "src": "370:3:1"
+                              }
+                            ],
+                            "id": 183,
+                            "name": "MemberAccess",
+                            "src": "370:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 178,
+                              "type": "string memory",
+                              "value": "message"
+                            },
+                            "id": 184,
+                            "name": "Identifier",
+                            "src": "382:7:1"
+                          }
+                        ],
+                        "id": 185,
+                        "name": "FunctionCall",
+                        "src": "363:27:1"
+                      }
+                    ],
+                    "id": 186,
+                    "name": "ExpressionStatement",
+                    "src": "363:27:1"
+                  }
+                ],
+                "id": 187,
+                "name": "Block",
+                "src": "356:40:1"
+              }
+            ],
+            "id": 188,
+            "name": "FunctionDefinition",
+            "src": "324:72:1"
+          }
+        ],
+        "id": 189,
+        "name": "ContractDefinition",
+        "src": "100:299:1"
+      }
+    ],
+    "id": 190,
+    "name": "SourceUnit",
+    "src": "0:399:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x928892ad7e2fd6745a5b37732d647904dc3d6d6a"
+    },
+    "1518243797043": {
+      "events": {},
+      "links": {},
+      "address": "0x352ebd84619597f4ec3d18bea793143eaa2f4c46"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-02-12T01:26:11.750Z"
+}
