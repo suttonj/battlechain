@@ -39,7 +39,7 @@ window.App = {
       accounts = accs;
       account = accounts[0];
 
-      //self.refreshBalance();
+      self.refreshBalance();
     });
   },
 
@@ -54,12 +54,30 @@ window.App = {
     var charFactory;
     CharacterFactory.deployed().then(function(instance) {
       charFactory = instance;
-      return charFactory.getCharacter.call(0, {from: account});
-    }).then(function(value) {
+      return charFactory.getCharacterCount.call();
+    }).then(function(numChars) {
       //var balance_element = document.getElementById("balance");
       //balance_element.innerHTML = value.valueOf();
-      console.log(value);
-      self.setStatus(value.valueOf());
+      numChars = numChars.toNumber();
+      self.setStatus(numChars + " characters exist.");
+
+      for (var i = 0; i < numChars; i++) {
+        charFactory.getCharacter(i).then(function(char) {
+
+          var charRow = $('#charRow');
+          var charTemplate = $('#charTemplate');
+
+          charTemplate.find('.panel-title').text(char[0]);
+          //charTemplate.find('img').attr('src', data[i].picture);
+          charTemplate.find('.char-dna').text(char[1].toNumber());
+          charTemplate.find('.char-level').text(char[2].toNumber());
+          //charTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+
+          charRow.append(charTemplate.html());
+
+          console.log(char);
+        });
+      }
     }).catch(function(e) {
       console.log(e);
       self.setStatus("Error getting balance; see log.");
@@ -69,15 +87,16 @@ window.App = {
   createCharacter: function() {
     var self = this;
 
-    var name = parseInt(document.getElementById("name").value);
+    var name = document.getElementById("name").value;
 
     this.setStatus("Initiating transaction... (please wait)");
 
     var charFactory;
     CharacterFactory.deployed().then(function(instance) {
       charFactory = instance;
+
       return charFactory.createRandomCharacter(name, {from: account});
-    }).then(function() {
+    }).then(function(result) {
       self.setStatus("Transaction complete!");
       self.refreshBalance();
     }).catch(function(e) {
